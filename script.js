@@ -31,7 +31,7 @@ myBank.addInterest(0.07);
 myBank.makePayment(194);
 myBank.applyFee(20);
 
-console.log(`Starting new transaction.`);
+console.log(`!!! Starting new transaction !!!`);
 
 let yourBank = new BankAccount(2000, 0.04);
 console.log(`Starting balance in your bank account is $${yourBank.balance}.`);
