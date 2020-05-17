@@ -6,11 +6,11 @@ class BankAccount {
     addInterest(interestRate) { 
         interestRate = interestRate * this.balance;
         this.balance = interestRate + this.balance;
-        console.log(`With ${this.interestRate}% interest, your new balance is now $${this.balance}.`)
+        console.log(`With ${this.interestRate}% interest, your new balance is now $${this.balance}.`);
     }
     makePayment(paymentAmount) { 
         this.balance = this.balance - paymentAmount;
-        console.log(`Thank you for your payment! This is your new balance $${this.balance}.`)
+        console.log(`Thank you for your payment! This is your new balance $${this.balance}.`);
     }
 }
 
@@ -21,7 +21,7 @@ class BankAccountWithFee extends BankAccount{
     }
     applyFee(fee) {
         this.balance = this.balance + fee;
-        console.log(`Adding this fee to your account. Your new balance is now $${this.balance}.`)
+        console.log(`Adding this fee to your account. Your new balance is now $${this.balance}.`);
     }
 }   
 
