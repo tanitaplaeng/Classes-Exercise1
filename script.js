@@ -1,15 +1,15 @@
 class BankAccount { 
     constructor(balance, interestRate) { 
         this.balance = balance;
-        this.interestRate = interestRate;
+        this.interestRate = interestRate / 100;
     }
     addInterest(interestRate) { 
-        interestRate = interestRate * this.balance;
-        this.balance = interestRate + this.balance;
+        const interest = interestRate * this.balance;
+        this.balance = interest + this.balance;
         console.log(`With ${this.interestRate}% interest, your new balance is now $${this.balance}.`);
     }
-    makePayment(paymentAmount) { 
-        this.balance = this.balance - paymentAmount;
+    makeDeposit(depositAmount) { 
+        this.balance = this.balance - depositAmount;
         console.log(`Thank you for your payment! This is your new balance $${this.balance}.`);
     }
 }
@@ -25,15 +25,15 @@ class BankAccountWithFee extends BankAccount{
     }
 }   
 
-let myBank = new BankAccountWithFee(1200, 0.07, 20);
+let myBank = new BankAccountWithFee(1200, 7, 20);
 console.log(`Starting balance in your bank account is $${myBank.balance}.`);
-myBank.addInterest(0.07);
-myBank.makePayment(194);
+myBank.addInterest(7);
+myBank.makeDeposit(194);
 myBank.applyFee(20);
 
 console.log(`!!! Starting new transaction !!!`);
 
-let yourBank = new BankAccount(2000, 0.04);
+let yourBank = new BankAccount(2000, 4);
 console.log(`Starting balance in your bank account is $${yourBank.balance}.`);
-yourBank.addInterest(0.04);
-yourBank.makePayment(900);
+yourBank.addInterest(4);
+yourBank.makeDeposit(900);
